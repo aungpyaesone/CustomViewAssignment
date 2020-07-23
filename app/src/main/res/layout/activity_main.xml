@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:text="@string/create_additional_pages"
+        android:textSize="@dimen/text_heading_1x"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/days"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular"
+        app:layout_constraintEnd_toEndOf="@+id/textView2"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:id="@+id/ivProfileOne"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="@dimen/margin_large"
+        app:cornerRadius="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:id="@+id/ivProfileTwo"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="36dp"
+        app:cornerRadius="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfileOne"
+        app:layout_constraintStart_toStartOf="@+id/ivProfileOne"
+        app:layout_constraintTop_toTopOf="@+id/ivProfileOne" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:id="@+id/ivProfileThree"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        app:cornerRadius="50dp"
+        android:layout_marginStart="24dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profile"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfileTwo"
+        app:layout_constraintStart_toEndOf="@+id/ivProfileOne"
+        app:layout_constraintTop_toTopOf="@+id/ivProfileTwo" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:id="@+id/ivProfileFour"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:padding="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_add_24"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfileThree"
+        app:layout_constraintStart_toEndOf="@+id/ivProfileTwo"
+        app:layout_constraintTop_toTopOf="@+id/ivProfileThree"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.CircularProgressBar
+        android:id="@+id/circularProgress"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="16dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfileFour"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ivProfileFour" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivProfileFour">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large"
+                android:text = "@string/task"/>
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvShowInDays"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_large"
+                android:text="@string/show_in_days"
+                android:layout_alignParentEnd="true"/>
+
+            
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvTask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/task_item_view"
+            />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CustomViewAssignment</string>
+    <string name="create_additional_pages">Create additional pages</string>
+    <string name="days">03 days | Dec 18,2019</string>
+    <string name="task">Tasks</string>
+    <string name="show_in_days">Show in days</string>
+    <string name="in_progress">In Progress</string>
+    <string name="contact_page">Contact Page</string>
+    <string name="design">#Design</string>
+    <string name="_3">3</string>
+    <string name="_5">5</string>
+    <string name="n_163">N 163</string>
+    <string name="created_tasks">Closed Tasks</string>
+    <string name="open_tasks">Open tasks</string>
+    <string name="_361">361</string>
+    <string name="zachary_butler">Zachary Butler</string>
+    <string name="ui_designer">UI Designer</string>
+    <string name="message">MESSAGE</string>
+</resources>

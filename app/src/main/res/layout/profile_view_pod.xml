@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvClosedTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:text="@string/created_tasks"/>
+
+    <org.mmtextview.components.MMTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/_361"
+        android:layout_below="@id/tvClosedTask"
+        android:layout_alignStart="@id/tvClosedTask"
+        android:layout_alignEnd="@id/tvClosedTask"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_3x"/>
+
+
+    <ImageView
+        android:id="@+id/ivProfile"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:src="@drawable/ic_baseline_account_circle_24"
+        android:layout_centerHorizontal="true"/>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvOpenedTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/open_tasks"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/margin_medium_3"
+        android:layout_marginEnd="@dimen/margin_medium_3"
+        />
+
+
+    <org.mmtextview.components.MMTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_3"
+        android:layout_alignStart="@id/tvOpenedTask"
+        android:layout_alignEnd="@id/tvOpenedTask"
+        android:gravity="center"
+        android:layout_below="@id/tvOpenedTask"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_regular_3x"/>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zachary_butler"
+        android:layout_below="@id/ivProfile"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/text_regular_3x"
+        android:textStyle="bold"/>
+
+    <org.mmtextview.components.MMTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ui_designer"
+        android:layout_below="@id/tvUserName"
+        android:layout_centerHorizontal="true"
+        android:textSize="@dimen/text_regular_2x"/>
+</RelativeLayout>

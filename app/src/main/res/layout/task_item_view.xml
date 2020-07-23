@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/margin_medium"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="@dimen/margin_medium"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvInProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_regular_3x"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:text="@string/in_progress"/>
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvContactPage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvInProgress"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:textStyle="bold"
+                android:textSize="@dimen/text_heading_1x"
+                android:layout_alignStart="@id/tvInProgress"
+                android:text="@string/contact_page"/>
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/design"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/tvInProgress"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:textSize="@dimen/text_regular_3x"/>
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_3"
+                android:layout_below="@id/tvContactPage"
+                android:layout_alignStart="@id/tvContactPage"
+                android:layout_marginTop="@dimen/margin_large"
+                android:drawableLeft="@drawable/ic_baseline_textsms_24"
+                android:drawablePadding="@dimen/margin_medium"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold"/>
+            
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvAttach"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_5"
+                android:drawableLeft="@drawable/ic_baseline_attach_file_24"
+                android:drawablePadding="@dimen/margin_medium"
+                android:layout_alignTop="@id/tvMessage"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_toEndOf="@id/tvMessage"/>
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/ivProfile"
+                android:layout_toStartOf="@id/ivProfile"
+                android:layout_alignBottom="@id/ivProfile"
+                android:gravity="center"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:text="@string/n_163"/>
+
+            <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_marginBottom="@dimen/margin_medium_2"
+                android:src="@drawable/profile"
+                app:cornerRadius="@dimen/margin_large"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/tvContactPage"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
