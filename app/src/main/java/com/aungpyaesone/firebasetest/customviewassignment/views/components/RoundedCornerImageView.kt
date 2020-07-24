@@ -34,7 +34,7 @@ class RoundedCornerImageView @JvmOverloads constructor(
     }
 
     private fun drawBorder(canvas: Canvas?){
-        paint.color = Color.BLACK
+        paint.color = Color.WHITE
         paint.style= Paint.Style.STROKE
         paint.strokeWidth = DEFAULT_BORDER_WIDTH
 

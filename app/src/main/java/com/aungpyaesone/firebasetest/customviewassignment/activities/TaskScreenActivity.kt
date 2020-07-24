@@ -8,6 +8,8 @@ import com.aungpyaesone.firebasetest.customviewassignment.R
 
 class TaskScreenActivity : BaseActivity() {
 
+
+
     companion object{
         fun newIntent(context: Context): Intent {
             return Intent(context,TaskScreenActivity::class.java)

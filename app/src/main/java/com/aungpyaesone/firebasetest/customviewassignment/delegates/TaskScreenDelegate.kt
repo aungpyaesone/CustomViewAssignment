@@ -1,6 +1,5 @@
 package com.aungpyaesone.firebasetest.customviewassignment.delegates
 
-interface MainScreenDelegate {
+interface TaskScreenDelegate {
     fun navigateToProfileScreen()
-    fun navigateToCreateTaskScreen()
 }

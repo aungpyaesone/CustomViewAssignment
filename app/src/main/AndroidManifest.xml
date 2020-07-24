@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.TaskScreenActivity"></activity>
+        <activity android:name=".activities.TaskScreenActivity"
+            android:theme="@style/SecondTheme"></activity>
         <activity android:name=".activities.ProfileScreenActivity" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>

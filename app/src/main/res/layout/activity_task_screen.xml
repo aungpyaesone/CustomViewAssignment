@@ -4,6 +4,315 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".activities.TaskScreenActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24" />
+
+            <org.mmtextview.components.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/ivBack"
+                android:text="@string/a_create_new_task"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+
+            <org.mmtextview.components.MMTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:backgroundTint="@android:color/holo_red_dark"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/text_regular_2x"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/MMTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:text="@string/client"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:id="@+id/roundedCornerImageView"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:src="@drawable/profile"
+        app:cornerRadius="50dp"
+        app:layout_constraintStart_toStartOf="@+id/MMTextView"
+        app:layout_constraintTop_toBottomOf="@+id/MMTextView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/roundedCornerImageView"
+        app:layout_constraintTop_toTopOf="@+id/MMTextView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/awsmd_team" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/MMTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:text="@string/project_name"
+        app:layout_constraintStart_toStartOf="@+id/roundedCornerImageView"
+        app:layout_constraintTop_toBottomOf="@+id/roundedCornerImageView" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/MMTextView2"
+        app:layout_constraintTop_toBottomOf="@+id/MMTextView2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/additional_pages" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/MMTextView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/project_name"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="custom"
+        app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
+        app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:layout_marginEnd="@dimen/margin_medium"
+        app:layout_constraintEnd_toStartOf="@+id/textInputLayout4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/MMTextView3"
+        app:layout_constraintTop_toBottomOf="@+id/MMTextView3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dec_24_2019"
+            android:textSize="12sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="custom"
+        app:startIconDrawable="@drawable/ic_baseline_calendar_today_24"
+        app:endIconDrawable="@drawable/ic_baseline_arrow_drop_down_24"
+        android:layout_marginStart="@dimen/margin_medium"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textInputLayout3"
+        app:layout_constraintTop_toTopOf="@+id/textInputLayout3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dec_30_2019"
+            android:textSize="12sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <org.mmtextview.components.MMTextView
+
+        android:id="@+id/MMTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/assignee"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:id="@+id/roundedCornerImageView3"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:src="@drawable/profile"
+        app:cornerRadius="24dp"
+        app:layout_constraintStart_toStartOf="@+id/MMTextView4"
+        app:layout_constraintTop_toBottomOf="@+id/MMTextView4" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:id="@+id/roundedCornerImageView5"
+        android:layout_width="46dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:src="@drawable/profile"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="@+id/roundedCornerImageView3"
+        app:layout_constraintStart_toStartOf="@+id/roundedCornerImageView3"
+        app:layout_constraintTop_toTopOf="@+id/roundedCornerImageView3" />
+
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="32dp"
+        android:padding="@dimen/margin_medium_2"
+        android:src="@drawable/ic_baseline_add_24"
+        app:cornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/roundedCornerImageView3"
+        app:layout_constraintStart_toStartOf="@+id/roundedCornerImageView5"
+        app:layout_constraintTop_toTopOf="@+id/roundedCornerImageView3"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/MMTextView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/category"
+        app:layout_constraintStart_toStartOf="@+id/roundedCornerImageView3"
+        app:layout_constraintTop_toBottomOf="@+id/roundedCornerImageView5" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        style="@style/Widget.MaterialComponents.Chip.Action"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+        app:layout_constraintStart_toStartOf="@+id/MMTextView5"
+        app:layout_constraintTop_toBottomOf="@+id/MMTextView5">
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checkable="true"
+            android:checked="true"
+            android:text="@string/des" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fronted" />
+
+        <com.google.android.material.chip.Chip
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/backand" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup">
+
+        <org.mmtextview.components.MMTextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:text="@string/description"
+            android:textSize="@dimen/text_regular_3x"
+            android:textStyle="bold" />
+
+<!--        <view-->
+<!--            android:id="@+id/viewLine"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="1dp"-->
+<!--            android:layout_below="@+id/tvDescription"-->
+<!--            android:layout_alignStart="@id/tvDescription"-->
+<!--            android:layout_marginTop="@dimen/margin_medium_2"-->
+<!--            android:layout_marginEnd="@dimen/margin_medium_2"-->
+<!--            android:layout_toStartOf="@id/ivAttach"-->
+<!--            android:background="@android:color/black" />-->
+
+        <ImageView
+            android:id="@+id/ivAttach"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:background="@drawable/circle_background"
+            android:padding="@dimen/margin_medium"
+            android:src="@drawable/ic_baseline_attach_file_24"
+            android:tint="@color/colorAccent" />
+
+        <org.mmtextview.components.MMTextView
+            android:id="@+id/tvAchievement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDescription"
+            android:layout_alignStart="@id/tvDescription"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            android:text="@string/attachments" />
+
+        <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+            android:id="@+id/ivProfile"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_below="@id/tvAchievement"
+            android:layout_alignStart="@id/tvAchievement"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:src="@drawable/profile"
+            app:cornerRadius="24dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivProfile"
+            android:layout_margin="@dimen/margin_medium_2"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/create_task" />
+
+    </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,4 +16,22 @@
     <string name="zachary_butler">Zachary Butler</string>
     <string name="ui_designer">UI Designer</string>
     <string name="message">MESSAGE</string>
+    <string name="save">Save</string>
+    <string name="a_create_new_task">A Create New Task</string>
+    <string name="client">CLIENT</string>
+    <string name="awsmd_team">Awsmd Team</string>
+    <string name="project_name">PROJECT NAME</string>
+    <string name="additional_pages">Create Additional Pages</string>
+    <string name="dec_24_2019">Dec 24 2019</string>
+    <string name="dec_30_2019">Dec 30 2019</string>
+    <string name="assignee">ASSIGNEE</string>
+    <string name="category">CATEGORY</string>
+    <string name="des">Design</string>
+    <string name="fronted">Fronted</string>
+    <string name="backand">Backand</string>
+    <string name="description">Description</string>
+    <string name="attachments">ATTACHMENTS</string>
+    <string name="create_task">CREATE TASK</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
