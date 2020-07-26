@@ -5,4 +5,7 @@ import com.aungpyaesone.firebasetest.customviewassignment.mvp.presenters.TaskScr
 import com.aungpyaesone.firebasetest.customviewassignment.mvp.views.TaskScreenView
 
 class TaskScreenImpl : TaskScreenPresenter, AbastractBasePresenter<TaskScreenView>() {
+    override fun navigateToProfileScreen() {
+        mView?.navigateToProfileScreen()
+    }
 }

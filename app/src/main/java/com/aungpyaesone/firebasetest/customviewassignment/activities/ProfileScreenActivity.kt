@@ -31,7 +31,7 @@ class ProfileScreenActivity : BaseActivity(), ProfileView {
         setContentView(R.layout.activity_profile_screen)
         setUpPresenter()
         setUpViewPod()
-       // setUpViewPager()
+        setUpViewPager()
     }
 
     private fun setUpPresenter(){
@@ -44,16 +44,12 @@ class ProfileScreenActivity : BaseActivity(), ProfileView {
     }
 
     private fun setUpViewPager(){
-        val categories = arrayListOf<String>("1","2","3")
-        val fragment = buildFragment(this,categories = categories)
-        mViewPagerAdapter = MyFragmentPagerAdapter(this,supportFragmentManager,fragment,categories)
+//        val categories = arrayListOf<String>("1","2","3")
+//        val fragment = buildFragment(this,categories = categories)
+        mViewPagerAdapter = MyFragmentPagerAdapter(this,supportFragmentManager)
         viewPager.adapter = mViewPagerAdapter
+        tabLayout.setupWithViewPager(viewPager)
 
-//        val b = Bundle()
-//        b.putInt("position", 4)
-//        val title = "asd"
-//        mViewPagerAdapter.add(fragment.cl, title, b)
-//        mViewPagerAdapter.notifyDataSetChanged()
     }
 
 

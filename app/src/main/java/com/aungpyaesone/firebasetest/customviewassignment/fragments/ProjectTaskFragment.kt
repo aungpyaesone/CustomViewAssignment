@@ -5,7 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.aungpyaesone.firebasetest.customviewassignment.R
+import com.aungpyaesone.firebasetest.customviewassignment.activities.ProfileScreenActivity
+import com.aungpyaesone.firebasetest.customviewassignment.activities.TaskScreenActivity
+import com.aungpyaesone.firebasetest.customviewassignment.adapters.TaskListAdapter
+import com.aungpyaesone.firebasetest.customviewassignment.data.vos.TaskVO
+import com.aungpyaesone.firebasetest.customviewassignment.mvp.presenterImpls.MainPresenterImpl
+import com.aungpyaesone.firebasetest.customviewassignment.mvp.presenters.MainPresenter
+import com.aungpyaesone.firebasetest.customviewassignment.mvp.views.MainView
+import kotlinx.android.synthetic.main.fragment_project_task.*
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,10 +28,13 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ProjectTaskFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ProjectTaskFragment : Fragment() {
+class ProjectTaskFragment : Fragment(),MainView {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private lateinit var mAdapter: TaskListAdapter
+    private lateinit var mPresenter : MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +50,25 @@ class ProjectTaskFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_project_task, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setUpPresenter()
+        setupRecycler()
+        mPresenter.onUiReady(this)
+    }
+
+    private fun setUpPresenter(){
+        mPresenter = ViewModelProviders.of(this).get(MainPresenterImpl::class.java)
+        mPresenter.initPresenter(this)
+    }
+
+    private fun setupRecycler(){
+        mAdapter = TaskListAdapter(mPresenter)
+        val linearLayoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,false)
+        rvProjectFragment.layoutManager = linearLayoutManager
+        rvProjectFragment.adapter = mAdapter
     }
 
     companion object {
@@ -56,5 +89,17 @@ class ProjectTaskFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun displayTaskList(taskList: List<TaskVO>) {
+        mAdapter.setData(taskList.toMutableList())
+    }
+
+    override fun navigateToProfileScreen() {
+        startActivity(activity?.let { ProfileScreenActivity.newIntent(it) })
+    }
+
+    override fun navigateToCreateTaskScreen() {
+        startActivity(activity?.let { TaskScreenActivity.newIntent(it) })
     }
 }

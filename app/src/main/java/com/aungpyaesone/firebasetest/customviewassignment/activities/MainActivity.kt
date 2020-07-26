@@ -2,6 +2,7 @@ package com.aungpyaesone.firebasetest.customviewassignment.activities
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -43,8 +44,8 @@ class MainActivity : BaseActivity(),MainView {
 
     private fun setUpProgress(){
         mCircularProgress = circularProgress as CircularProgressBar
-        mCircularProgress.setProgress(50)
-        //mCircularProgress.setProgressColor(Color.RED)
+        mCircularProgress.setProgress(80)
+        mCircularProgress.setProgressColor(Color.RED)
     }
     private fun setUpRecycler(){
         mTaskAdapter = TaskListAdapter(mPresenter)
