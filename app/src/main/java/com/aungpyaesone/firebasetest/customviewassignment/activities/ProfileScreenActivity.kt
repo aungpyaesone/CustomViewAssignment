@@ -9,7 +9,6 @@ import com.aungpyaesone.firebasetest.customviewassignment.adapters.MyFragmentPag
 import com.aungpyaesone.firebasetest.customviewassignment.mvp.presenterImpls.ProfileScreenPresenterImpl
 import com.aungpyaesone.firebasetest.customviewassignment.mvp.presenters.ProfileScreenPresenter
 import com.aungpyaesone.firebasetest.customviewassignment.mvp.views.ProfileView
-import com.aungpyaesone.firebasetest.customviewassignment.utils.buildFragment
 import com.aungpyaesone.firebasetest.customviewassignment.views.view_pods.UserProfileViewPod
 import kotlinx.android.synthetic.main.activity_profile_screen.*
 

@@ -12,6 +12,7 @@ import com.aungpyaesone.firebasetest.customviewassignment.data.vos.TaskVO
 import com.aungpyaesone.firebasetest.customviewassignment.mvp.presenters.MainPresenter
 import com.aungpyaesone.firebasetest.customviewassignment.mvp.presenterImpls.MainPresenterImpl
 import com.aungpyaesone.firebasetest.customviewassignment.mvp.views.MainView
+import com.aungpyaesone.firebasetest.customviewassignment.utils.ItemDecorator
 import com.aungpyaesone.firebasetest.customviewassignment.views.components.CircularProgressBar
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -51,6 +52,7 @@ class MainActivity : BaseActivity(),MainView {
         mTaskAdapter = TaskListAdapter(mPresenter)
         val linearLayoutManager =LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false)
         rvTask.layoutManager = linearLayoutManager
+        rvTask.addItemDecoration(ItemDecorator(-40))
         rvTask.adapter = mTaskAdapter
     }
 

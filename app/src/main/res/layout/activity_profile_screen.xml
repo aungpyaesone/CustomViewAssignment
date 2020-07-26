@@ -1,65 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".activities.ProfileScreenActivity">
 
-    <include
-        android:id="@+id/profileViewPod"
-        layout="@layout/profile_view_pod"/>
-
-    <Button
-        android:id="@+id/btnMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/profileViewPod"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/message_button_background"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="@string/message"/>
-
-    <ImageView
+    <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
         android:layout_width="46dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/margin_medium_3"
+        android:layout_height="46dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:tint="@android:color/white"
         android:padding="@dimen/margin_medium_2"
-        android:background="@drawable/circle_background"
-        android:src="@drawable/ic_baseline_add_alert_24"
-        android:tint="@color/colorAccent"
-        android:layout_toEndOf="@id/btnMessage"
-        android:layout_alignTop="@id/btnMessage"
-        android:layout_alignBottom="@id/btnMessage"
-        />
+        android:src="@drawable/ic_baseline_close_24"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:layout_width="46dp"
-        android:layout_height="match_parent"
-        android:layout_marginStart="@dimen/margin_medium_3"
-        android:src="@drawable/ic_baseline_share_24"
-        android:layout_alignTop="@id/btnMessage"
-        android:layout_alignBottom="@id/btnMessage"
-        android:layout_toStartOf="@id/btnMessage"
-        android:padding="@dimen/margin_medium_2"
-        android:background="@drawable/circle_background"
-        android:layout_marginEnd="@dimen/margin_medium_3"
-        android:tint="@color/colorAccent"/>
-
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/btnMessage"
-        />
+        android:layout_height="0dp"
+        android:layout_marginTop="128dp"
+        android:background="@drawable/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-<androidx.viewpager.widget.ViewPager
-    android:id="@+id/viewPager"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_below="@id/tabLayout"
-    >
-</androidx.viewpager.widget.ViewPager>
+        <include
+            android:id="@+id/profileViewPod"
+            layout="@layout/profile_view_pod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btnMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileViewPod"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:backgroundTint="@color/colorAccent"
+            android:text="@string/message" />
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/btnMessage"
+            android:layout_alignBottom="@id/btnMessage"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_toEndOf="@id/btnMessage"
+            android:background="@drawable/circle_background"
+            android:padding="@dimen/margin_medium_2"
+            android:src="@drawable/ic_baseline_add_alert_24"
+            android:tint="@color/colorAccent" />
+
+        <ImageView
+            android:layout_width="46dp"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@id/btnMessage"
+            android:layout_alignBottom="@id/btnMessage"
+            android:layout_marginStart="@dimen/margin_medium_3"
+            android:layout_marginEnd="@dimen/margin_medium_3"
+            android:layout_toStartOf="@id/btnMessage"
+            android:background="@drawable/circle_background"
+            android:padding="@dimen/margin_medium_2"
+            android:src="@drawable/ic_baseline_share_24"
+            android:tint="@color/colorAccent" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnMessage" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tabLayout"></androidx.viewpager.widget.ViewPager>
+    </RelativeLayout>
 
 
-</RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

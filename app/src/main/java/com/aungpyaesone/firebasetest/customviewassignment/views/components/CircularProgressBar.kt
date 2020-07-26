@@ -129,7 +129,6 @@ class CircularProgressBar @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         initMeasurments()
-      //  drawbackgroundCircle(canvas)
         drawOutlineArc(canvas)
         if (mDrawText) {
             drawText(canvas)

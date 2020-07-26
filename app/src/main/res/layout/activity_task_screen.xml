@@ -244,75 +244,97 @@
             android:text="@string/backand" />
     </com.google.android.material.chip.ChipGroup>
 
-    <RelativeLayout
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        app:cardCornerRadius="@dimen/margin_medium_3"
+        android:backgroundTint="@android:color/white"
         app:layout_constraintTop_toBottomOf="@+id/chipGroup">
 
-        <org.mmtextview.components.MMTextView
-            android:id="@+id/tvDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_medium_2"
-            android:text="@string/description"
-            android:textSize="@dimen/text_regular_3x"
-            android:textStyle="bold" />
 
-<!--        <view-->
-<!--            android:id="@+id/viewLine"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="1dp"-->
-<!--            android:layout_below="@+id/tvDescription"-->
-<!--            android:layout_alignStart="@id/tvDescription"-->
-<!--            android:layout_marginTop="@dimen/margin_medium_2"-->
-<!--            android:layout_marginEnd="@dimen/margin_medium_2"-->
-<!--            android:layout_toStartOf="@id/ivAttach"-->
-<!--            android:background="@android:color/black" />-->
-
-        <ImageView
-            android:id="@+id/ivAttach"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            android:layout_marginEnd="@dimen/margin_medium_2"
-            android:background="@drawable/circle_background"
-            android:padding="@dimen/margin_medium"
-            android:src="@drawable/ic_baseline_attach_file_24"
-            android:tint="@color/colorAccent" />
-
-        <org.mmtextview.components.MMTextView
-            android:id="@+id/tvAchievement"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvDescription"
-            android:layout_alignStart="@id/tvDescription"
-            android:layout_marginTop="@dimen/margin_medium_3"
-            android:text="@string/attachments" />
-
-        <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
-            android:id="@+id/ivProfile"
-            android:layout_width="46dp"
-            android:layout_height="46dp"
-            android:layout_below="@id/tvAchievement"
-            android:layout_alignStart="@id/tvAchievement"
-            android:layout_marginTop="@dimen/margin_medium_2"
-            android:src="@drawable/profile"
-            app:cornerRadius="24dp" />
-
-        <Button
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/ivProfile"
-            android:layout_margin="@dimen/margin_medium_2"
-            android:backgroundTint="@color/colorAccent"
-            android:text="@string/create_task" />
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            >
 
-    </RelativeLayout>
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_marginStart="@dimen/margin_medium_2"
+                android:text="@string/description"
+                android:textSize="@dimen/text_regular_3x"
+                android:textStyle="bold" />
+
+                    <View
+                        android:id="@+id/viewLine"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/tvDescription"
+                        android:layout_alignStart="@id/tvDescription"
+                        android:layout_marginTop="@dimen/margin_medium_2"
+                        android:layout_marginEnd="@dimen/margin_medium_2"
+                        android:layout_toStartOf="@id/ivAttach"
+                        android:background="@android:color/black" />
+
+            <ImageView
+                android:id="@+id/ivAttach"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:background="@drawable/circle_background"
+                android:padding="@dimen/margin_medium"
+                android:src="@drawable/ic_baseline_attach_file_24"
+                android:tint="@color/colorAccent" />
+
+            <org.mmtextview.components.MMTextView
+                android:id="@+id/tvAchievement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_below="@id/viewLine"
+                android:layout_alignStart="@id/tvDescription"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:text="@string/attachments" />
+
+            <com.aungpyaesone.firebasetest.customviewassignment.views.components.RoundedCornerImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
+                android:layout_below="@id/tvAchievement"
+                android:layout_alignStart="@id/tvAchievement"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:src="@drawable/profile"
+                app:cornerRadius="24dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivProfile"
+                android:layout_margin="@dimen/margin_medium_2"
+                android:backgroundTint="@color/colorAccent"
+                android:text="@string/create_task" />
+
+
+            <com.aungpyaesone.firebasetest.customviewassignment.views.components.CustomHorizontalProgressBar
+                android:id="@+id/straightProgress"
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                app:progress="50"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginStart="@dimen/margin_medium"
+                android:layout_toEndOf="@id/ivProfile"
+                android:layout_below="@id/tvAchievement"
+                android:layout_toStartOf="@id/ivAttach"
+                />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
